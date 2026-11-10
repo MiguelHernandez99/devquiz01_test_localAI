@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DevQuiz: Quiz de JavaScript básico para principiantes">
+  <title>DevQuiz | Aprende JavaScript</title>
+  <!-- Enlace al archivo de estilos CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Contenedor principal del quiz -->
+  <main class="quiz-container">
+    <!-- Logo / Título del quiz -->
+    <header>
+      <h1>DevQuiz</h1>
+      <p>Preguntas de JavaScript para principiantes</p>
+    </header>
+
+    <!-- Sección del quiz: Pregunta actual, opciones y feedback -->
+    <section class="question-section" id="question-container">
+      <!-- Muestra la pregunta actual -->
+      <div class="question" id="question-text"></div>
+
+      <!-- Barrio de progreso -->
+      <div class="progress-bar">
+        <div class="progress" id="progress"></div>
+      </div>
+
+      <!-- Opciones de respuestas -->
+      <div class="options" id="options-container"></div>
+
+      <!-- Contenedor para mostrar explicación y feedback visual -->
+      <div class="feedback" id="feedback-container">
+        <p class="explanation" id="explanation-text"></p>
+      </div>
+    </section>
+
+    <!-- Pantalla final con resultados -->
+    <section class="result-section" id="result-section">
+      <h2>¡Quiz Terminado!</h2>
+      <p>Tu puntuación: <span id="score">0</span>/<span id="total-questions">10</span></p>
+      <button id="restart-btn" class="btn">Reiniciar Quiz</button>
+    </section>
+  </main>
+
+  <!-- Scripts del quiz -->
+  <!-- Cargar preguntas primero -->
+  <script src="quiz.js"></script>
+  <!-- Luego cargar lógica principal -->
+  <script src="app.js"></script>
+
+  <footer>
+    <p>Desarrollado con 💙 para principiantes en programación</p>
+  </footer>
+</body>
+</html>

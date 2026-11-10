@@ -1,0 +1,210 @@
+/* 
+   DevQuiz - Estilos CSS para quiz interactivo
+   Colores principales: Amarillo (#FFD700) y Naranja (#FF8C00)
+   Propósito: Barrita de progreso, botones, mensajes de feedback visual
+*/
+
+/* Reset básico y variables de colores */
+:root {
+  --amarillo: #FFD700;          // Amarillo Dorado
+  --naranja: #FF8C00;            // Naranja Quemado
+  --naranja-claro: #FFA500;      // Naranja más claro
+  --fondo-principal: #f9f9f9;   // Fondo claro para contraste
+  --texto-principal: #333;      // Texto oscuro estándar
+  --verde-exito: #51B749;       // Verde para respuesta correcta
+  --rojo-error: #D63333;        // Rojo para respuesta incorrecta
+  --gris-boton: #444;           // Color de texto en botones
+  --gris-contenedor: #e6e6e6;   // Fondo para contenedores
+}
+
+/* Estilo global del body */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+  color: var(--texto-principal);
+  background-color: var(--fondo-principal);
+}
+
+/* Estilo del contenedor principal del quiz */
+.quiz-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--gris-contenedor);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Header del quiz */
+header {
+  border-bottom: 2px solid var(--naranja);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  color: var(--naranja);
+  font-size: 2.5em;
+}
+
+/* Sección de preguntas */
+.question-section {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 20px;
+  display: inline-block;
+  width: 90%;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+}
+
+/* Estilos para la pregunta actual */
+#question-text {
+  font-size: 1.3em;
+  text-align: left;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f5ffea;
+  border-radius: 4px;
+}
+
+/* Barra de progreso */
+.progress-bar {
+  height: 10px;
+  background-color: var(--amarillo);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  width: 0%;
+  background-color: var(--naranja);
+  transition: width 0.5s ease-out;
+}
+
+/* Estilo de las opciones */
+#options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+/* Estilos para botones de las opciones */
+.options button {
+  padding: 12px;
+  font-size: 1em;
+  background-color: #fff;
+  border: 2px solid var(--amarillo);
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  transition: all 0.2s;
+  appearance: none;
+}
+
+.options button:hover {
+  background-color: var(--amarillo);
+  color: #333;
+}
+
+options button:focus {
+  outline: none;
+  background-color: var(--naranja-claro);
+}
+
+/* Feedback: Explicación al responder */
+.feedback {
+  margin-top: 20px;
+  visibility: hidden;
+  opacity: 0;
+  font-weight: bold;
+  transition: all 0.5s;
+  text-align: left;
+  padding: 15px;
+  border-radius: 4px;
+  color: var(--texto-principal);
+}
+
+/* Mostrar feedback al responder */
+.feedback.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Feedback de éxito (correcta) */
+.explanation.correct {
+  background-color: rgba(81, 183, 73, 0.2);
+  border-left: 5px solid var(--verde-exito);
+}
+
+/* Feedback de error (incorrecta) */
+.explanation.wrong {
+  background-color: rgba(214, 51, 51, 0.2);
+  border-left: 5px solid var(--rojo-error);
+}
+
+/* Botón del result-section */
+btn, #restart-btn {
+  padding: 12px 30px;
+  font-size: 1em;
+  background-color: var(--naranja);
+  color: var(--gris-boton);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+btn:hover, #restart-btn:hover {
+  background-color: var(--naranja-claro);
+}
+
+/* Sección de resultados */
+.result-section {
+  text-align: center;
+  background-color: var(--amarillo);
+  padding: 30px;
+  border-radius: 6px;
+  display: none;
+}
+
+.result-section h2 {
+  color: var(--texto-principal);
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+#score, #total-questions {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  font-size: 0.8em;
+  color: #666;
+  text-align: center;
+}
+
+/* Efectos visuales para respuesta correcta e incorrecta */
+.options button.correct {
+  background-color: var(--verde-exito);
+  color: #fff;
+  border-color: var(--verde-exito);
+}
+
+.options button.wrong {
+  background-color: var(--rojo-error);
+  color: #fff;
+  border-color: var(--rojo-error);
+}
