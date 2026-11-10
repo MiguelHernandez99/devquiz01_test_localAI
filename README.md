@@ -39,7 +39,7 @@ Al no depender de compiladores ni servidores complejos, puedes ejecutarlo de dos
 ### Opción 1: Directamente en el navegador
 1. Clona o descarga este repositorio en tu computadora:
    ```bash
-   git clone https://github.com
+   git clone https://github.com/MiguelHernandez99/devquiz01_test_localAI
    ```
 2. Entra a la carpeta del proyecto y haz doble clic sobre el archivo **`index.html`** para abrirlo en tu navegador favorito.
 
